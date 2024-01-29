@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import sys
+from factorize import factorize
+
+
+if len(sys.argv) != 2:
+    print("Usage: {:s} <file>".format(sys.argv[0]))
+    sys.exit(1)
+with open(sys.argv[1]) as file:
+    for line in file:
+        factors = factorize(int(line))
+        print("{:d}={:d}*{:d}".format(factors[2], factors[0], factors[1]))
