@@ -4,7 +4,8 @@ import sys
 
 def factorize():
     """
-    A function to search file and factorize the given set of numbers into two prime numbers (format n = p*q)
+    A function to search file and factorize the given set
+    of numbers into two prime numbers (format n = p*q)
     """
     try:
         file = sys.argv[1]
@@ -12,12 +13,13 @@ def factorize():
             for line_number in f:
                 line_number = int(line_number)
                 if line_number % 2 == 0:
-                        print("{}={}*{}".format(line_number, line_number // 2, 2))
-                        continue
+                    print("{}={}*{}".format(line_number, line_number // 2, 2))
+                    continue
                 i = 3
                 while i < line_number // 2:
                     if line_number % i == 0:
-                        print("{}={}*{}".format(line_number, line_number // i, i))
+                        res = line_number // i
+                        print("{}={}*{}".format(line_number, res, i))
                         break
                     i = i + 2
                 if i == (line_number // 2) + 1:
